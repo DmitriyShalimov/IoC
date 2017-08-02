@@ -1,8 +1,10 @@
-package ioccontainer;
+package ua.shalimov.ioc.reader;
 
 import org.xml.sax.Attributes;
 import org.xml.sax.SAXException;
 import org.xml.sax.helpers.DefaultHandler;
+import ua.shalimov.ioc.exception.BeanInstantiationException;
+import ua.shalimov.ioc.model.BeanDefinition;
 
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -26,7 +28,7 @@ public class XMLBeanDefinitionReader implements BeanDefinitionReader {
             parser = factory.newSAXParser();
             parser.parse(xmlData, new MyParser());
         } catch (ParserConfigurationException | IOException | SAXException e) {
-            throw new RuntimeException("Error occurred while reading xml", e);
+            throw new BeanInstantiationException(e);
         }
         return beanDefinitions;
     }
@@ -39,7 +41,9 @@ public class XMLBeanDefinitionReader implements BeanDefinitionReader {
             } else {
                 BeanDefinition beanDefinition = new BeanDefinition();
                 if (qName.equals("bean")) {
-                    beanDefinition.setId(attributes.getValue("id"));
+                    String id = attributes.getValue("id");
+                    checkRepeatableBeanId(id);
+                    beanDefinition.setId(id);
                     String fullBeanDefinitionClassName = attributes.getValue("class");
                     String definitionClassName = fullBeanDefinitionClassName.substring(fullBeanDefinitionClassName.lastIndexOf(".") + 1);
                     beanDefinition.setBeanClassName(definitionClassName);
@@ -56,6 +60,14 @@ public class XMLBeanDefinitionReader implements BeanDefinitionReader {
                     }
                 }
                 super.startElement(uri, localName, qName, attributes);
+            }
+        }
+
+        private void checkRepeatableBeanId(String id) {
+            for (BeanDefinition tempBeanDefinition : beanDefinitions) {
+                if (tempBeanDefinition.getId().equals(id)) {
+                    throw new BeanInstantiationException("It is forbidden to create two different IDs with the same value");
+                }
             }
         }
     }

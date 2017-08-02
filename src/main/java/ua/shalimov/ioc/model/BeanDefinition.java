@@ -1,4 +1,4 @@
-package ioccontainer;
+package ua.shalimov.ioc.model;
 
 import java.util.Map;
 

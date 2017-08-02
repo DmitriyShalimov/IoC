@@ -1,4 +1,4 @@
-package ioccontainer;
+package ua.shalimov.ioc.model;
 
 public class Bean {
     private String id;

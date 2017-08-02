@@ -1,4 +1,6 @@
-package ioccontainer;
+package ua.shalimov.ioc.reader;
+
+import ua.shalimov.ioc.model.BeanDefinition;
 
 import java.util.List;
 
