@@ -1,7 +1,5 @@
 package ua.shalimov.ioc.context;
 
-import ua.shalimov.ioc.reader.BeanDefinitionReader;
-
 import java.util.List;
 
 public interface ApplicationContext {
@@ -13,5 +11,4 @@ public interface ApplicationContext {
 
     List<String> getBeanName();
 
-    void setBeanDefinitionReader(BeanDefinitionReader reader);
 }

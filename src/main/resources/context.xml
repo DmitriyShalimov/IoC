@@ -1,0 +1,18 @@
+<beans>
+
+    <import resource="src/main/resources/email-context.xml"/>
+
+    <bean id="userService" class="ua.shalimov.ioc.testData.UserService">
+        <property name="mailService" ref="mailService"/>
+    </bean>
+
+    <bean id="paymentWithMaxService" class="ua.shalimov.ioc.testData.PaymentService">
+        <property name="maxAmount" value="5000"/>
+        <property name="mailService" ref="mailService"/>
+    </bean>
+
+    <bean id="paymentService" class="ua.shalimov.ioc.testData.PaymentService">
+        <property name="mailService" ref="mailService"/>
+    </bean>
+
+</beans>

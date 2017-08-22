@@ -44,8 +44,7 @@ public class XMLBeanDefinitionReader implements BeanDefinitionReader {
                     String id = attributes.getValue("id");
                     checkRepeatableBeanId(id);
                     beanDefinition.setId(id);
-                    String fullBeanDefinitionClassName = attributes.getValue("class");
-                    String definitionClassName = fullBeanDefinitionClassName.substring(fullBeanDefinitionClassName.lastIndexOf(".") + 1);
+                    String definitionClassName = attributes.getValue("class");
                     beanDefinition.setBeanClassName(definitionClassName);
                     beanDefinition.setDependencies(new HashMap<>());
                     beanDefinition.setRefDependencies(new HashMap<>());

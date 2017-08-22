@@ -1,0 +1,8 @@
+<beans>
+
+    <bean id="mailService" class="ua.shalimov.ioc.testData.MailService">
+        <property name="protocol" value="POP3"/>
+        <property name="port" value="3000"/>
+    </bean>
+
+</beans>
