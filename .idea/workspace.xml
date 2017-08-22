@@ -2,18 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7df4b849-bfc4-4710-b657-042fe9ac76e0" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/context.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/email-context.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/java/ua/shalimov/ioc/context/ApplicationContextTest.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/java/ua/shalimov/ioc/testData/MailService.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/java/ua/shalimov/ioc/testData/PaymentService.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/java/ua/shalimov/ioc/testData/UserService.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/ua/shalimov/ioc/context/ClasspathApplicationContext.java" afterPath="$PROJECT_DIR$/src/main/java/ua/shalimov/ioc/context/ClassPathApplicationContext.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ua/shalimov/ioc/context/ApplicationContext.java" afterPath="$PROJECT_DIR$/src/main/java/ua/shalimov/ioc/context/ApplicationContext.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ua/shalimov/ioc/reader/BeanDefinitionReader.java" afterPath="$PROJECT_DIR$/src/main/java/ua/shalimov/ioc/reader/BeanDefinitionReader.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ua/shalimov/ioc/reader/XMLBeanDefinitionReader.java" afterPath="$PROJECT_DIR$/src/main/java/ua/shalimov/ioc/reader/XMLBeanDefinitionReader.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/ua/shalimov/ioc/reader/XMLBeanDefinitionReaderTest.java" afterPath="$PROJECT_DIR$/src/test/java/ua/shalimov/ioc/reader/XMLBeanDefinitionReaderTest.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -27,16 +17,26 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="ClassPathApplicationContext.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ClassPathApplicationContext.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/ua/shalimov/ioc/context/ClassPathApplicationContext.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-425">
-              <caret line="32" column="0" lean-forward="false" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
+            <state relative-caret-position="289">
+              <caret line="17" column="17" lean-forward="true" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="40" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#1132#1133#0" expanded="true" />
                 <element signature="e#1172#1173#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="304">
+              <caret line="34" column="27" lean-forward="true" selection-start-line="34" selection-start-column="27" selection-end-line="34" selection-end-column="27" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -128,16 +128,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PaymentService.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/ua/shalimov/ioc/testData/PaymentService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="23" column="3" lean-forward="false" selection-start-line="23" selection-start-column="3" selection-end-line="23" selection-end-column="3" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
     </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
@@ -194,7 +184,6 @@
         <option value="$PROJECT_DIR$/src/main/java/ua/shalimov/ioc/context/BeanNotFoundException.java" />
         <option value="$PROJECT_DIR$/src/main/java/ua/shalimov/ioc/exception/BeanNotFoundException.java" />
         <option value="$PROJECT_DIR$/src/main/java/ua/shalimov/ioc/exception/BeanInstantiationException.java" />
-        <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/ua/shalimov/ioc/MailSevice.java" />
         <option value="$PROJECT_DIR$/src/main/java/ua/shalimov/ioc/context/ClasspathApplicationContext.java" />
@@ -217,6 +206,7 @@
         <option value="$PROJECT_DIR$/src/test/java/ua/shalimov/ioc/testData/PaymentService.java" />
         <option value="$PROJECT_DIR$/src/main/java/ua/shalimov/ioc/reader/BeanDefinitionReader.java" />
         <option value="$PROJECT_DIR$/src/main/java/ua/shalimov/ioc/context/ApplicationContext.java" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -1310,14 +1300,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="6" lean-forward="false" selection-start-line="2" selection-start-column="6" selection-end-line="2" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ua/shalimov/ioc/Starter.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
@@ -1438,13 +1420,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ua/shalimov/ioc/context/ClassPathApplicationContext.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-425">
-          <caret line="32" column="0" lean-forward="false" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
+        <state relative-caret-position="289">
+          <caret line="17" column="17" lean-forward="true" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="40" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#1132#1133#0" expanded="true" />
             <element signature="e#1172#1173#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="304">
+          <caret line="34" column="27" lean-forward="true" selection-start-line="34" selection-start-column="27" selection-end-line="34" selection-end-column="27" />
+          <folding />
         </state>
       </provider>
     </entry>
