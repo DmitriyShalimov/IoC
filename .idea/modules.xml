@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/ioc.iml" filepath="$PROJECT_DIR$/ioc.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ioc.iml" filepath="$PROJECT_DIR$/ioc.iml" />
     </modules>
   </component>
 </project>

@@ -6,9 +6,7 @@ import org.xml.sax.helpers.DefaultHandler;
 import ua.shalimov.ioc.exception.BeanInstantiationException;
 import ua.shalimov.ioc.model.BeanDefinition;
 
-import java.io.FileInputStream;
 import java.io.IOException;
-import java.io.InputStream;
 import java.util.*;
 import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.parsers.SAXParserFactory;
@@ -22,11 +20,9 @@ public class XMLBeanDefinitionReader implements BeanDefinitionReader {
         factory.setValidating(true);
         factory.setNamespaceAware(false);
         SAXParser parser;
-        InputStream xmlData;
         try {
-            xmlData = new FileInputStream(path);
             parser = factory.newSAXParser();
-            parser.parse(xmlData, new MyParser());
+            parser.parse(getClass().getClassLoader().getResourceAsStream(path), new MyParser());
         } catch (ParserConfigurationException | IOException | SAXException e) {
             throw new BeanInstantiationException(e);
         }

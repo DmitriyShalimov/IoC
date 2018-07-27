@@ -30,8 +30,8 @@ public class ClassPathApplicationContext implements ApplicationContext {
         injectRefDependencies();
     }
 
-    public ClassPathApplicationContext(String path) {
-        this(new String[]{path});
+    public ClassPathApplicationContext(String resourcesName) {
+        this(new String[]{resourcesName});
     }
 
     public <T> T getBean(Class<T> t) {
@@ -164,6 +164,5 @@ public class ClassPathApplicationContext implements ApplicationContext {
         } catch (IllegalAccessException | InvocationTargetException e) {
             throw new BeanInstantiationException(e);
         }
-
     }
 }

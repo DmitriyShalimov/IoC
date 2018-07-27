@@ -19,7 +19,7 @@ public class ApplicationContextTest {
 
     @Before
     public void setUpApplicationContext() {
-        applicationContext = new ClassPathApplicationContext("src/main/resources/context.xml");
+        applicationContext = new ClassPathApplicationContext("context.xml");
     }
 
     @Test

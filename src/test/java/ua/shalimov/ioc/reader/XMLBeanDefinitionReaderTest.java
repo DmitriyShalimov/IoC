@@ -14,7 +14,7 @@ public class XMLBeanDefinitionReaderTest {
     public void readBeanDefinitionsTest() {
         List<BeanDefinition> beanDefinitions;
         BeanDefinitionReader beanDefinitionReader = new XMLBeanDefinitionReader();
-        beanDefinitions = beanDefinitionReader.readBeanDefinitions("src/main/resources/context.xml");
+        beanDefinitions = beanDefinitionReader.readBeanDefinitions("context.xml");
         assertThat(beanDefinitions.size(), is(4));
         assertThat(beanDefinitions.get(0).getId(), is("mailService"));
         assertThat(beanDefinitions.get(0).getBeanClassName(), is("ua.shalimov.ioc.testData.MailService"));

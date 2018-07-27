@@ -1,6 +1,6 @@
 <beans>
 
-    <import resource="src/main/resources/email-context.xml"/>
+    <import resource="email-context.xml"/>
 
     <bean id="userService" class="ua.shalimov.ioc.testData.UserService">
         <property name="mailService" ref="mailService"/>
