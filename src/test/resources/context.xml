@@ -14,6 +14,8 @@
     <bean id="paymentService" class="ua.shalimov.ioc.testData.PaymentService">
         <property name="mailService" ref="mailService"/>
     </bean>
+
     <bean id="consoleLogBeanPostProcessor" class="ua.shalimov.ioc.testData.ConsoleLogBeanPostProcessor"></bean>
 
+    <bean id="Aa" class="ua.shalimov.ioc.testData.Aa"></bean>
 </beans>

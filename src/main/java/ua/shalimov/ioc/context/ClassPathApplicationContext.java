@@ -1,5 +1,6 @@
 package ua.shalimov.ioc.context;
 
+import ua.shalimov.ioc.context.beanpostprocessor.BeanFactoryPostProcessor;
 import ua.shalimov.ioc.context.beanpostprocessor.BeanPostprocessorHandler;
 import ua.shalimov.ioc.exception.BeanInstantiationException;
 import ua.shalimov.ioc.exception.BeanNotFoundException;
@@ -36,12 +37,45 @@ public class ClassPathApplicationContext implements ApplicationContext {
 
     public void start() {
         beanDefinitions = reader.readBeanDefinitions();
+        callBeanFactoryPostProcess(beanDefinitions);
         createBeansFromBeanDefinition();
         injectDependencies();
         BeanPostprocessorHandler beanPostprocessorHendler = new BeanPostprocessorHandler(beans);
         beanPostprocessorHendler.postProcessBeforeInitialization();
         callInitMethod();
         beanPostprocessorHendler.postProcessAfterInitialization();
+    }
+
+    private void callBeanFactoryPostProcess(List<BeanDefinition> beanDefinitions) {
+        Iterator<BeanDefinition> iterator = beanDefinitions.iterator();
+        while (iterator.hasNext()) {
+            try {
+                BeanDefinition beanDefinition = iterator.next();
+                String className = beanDefinition.getBeanClassName();
+                Class<?> beanClass = Class.forName(className);
+                if (BeanFactoryPostProcessor.class.isAssignableFrom(beanClass)) {
+                    Bean bean=createBeanFromBeanDefinition(beanDefinition);
+                    Method postProcessBeanFactory = beanClass.getMethod("postProcessBeanFactory", List.class);
+                    postProcessBeanFactory.invoke(bean.getValue(), beanDefinitions);
+                    iterator.remove();
+                }
+            } catch (Exception e) {
+                throw new BeanInstantiationException(e);
+            }
+        }
+    }
+    private Bean createBeanFromBeanDefinition(BeanDefinition beanDefinition) {
+        try {
+            String className = beanDefinition.getBeanClassName();
+            Class clazz = Class.forName(className);
+            Object obj = clazz.newInstance();
+            Bean bean = new Bean();
+            bean.setId(beanDefinition.getId());
+            bean.setValue(obj);
+            return bean;
+        } catch (ClassNotFoundException | IllegalAccessException | InstantiationException e) {
+            throw new BeanInstantiationException(e);
+        }
     }
 
     private void callInitMethod() {
@@ -59,7 +93,6 @@ public class ClassPathApplicationContext implements ApplicationContext {
         }
     }
 
-    //getBean(UserDao.class) JdbsUserDao
     public <T> T getBean(Class<T> type) {
         T bean = null;
         int count = 0;
@@ -106,22 +139,13 @@ public class ClassPathApplicationContext implements ApplicationContext {
 
     private void createBeansFromBeanDefinition() {
         for (BeanDefinition beanDefinition : beanDefinitions) {
-            try {
-                String className = beanDefinition.getBeanClassName();
-                Class clazz = Class.forName(className);
-                Object obj = clazz.newInstance();
-
-                Bean bean = new Bean();
-                bean.setId(beanDefinition.getId());
-                bean.setValue(obj);
-
-                beans.add(bean);
-                beanDefinitionToBeanMap.put(beanDefinition, bean);
-            } catch (ClassNotFoundException | IllegalAccessException | InstantiationException e) {
-                throw new BeanInstantiationException(e);
-            }
+            Bean bean = createBeanFromBeanDefinition(beanDefinition);
+            beans.add(bean);
+            beanDefinitionToBeanMap.put(beanDefinition, bean);
         }
     }
+
+
 
     private void injectDependencies() {
         for (Injector injector : new Injector[]{new ValueInjector(beanDefinitions, beanDefinitionToBeanMap, beans), new ReferenceIngector(beanDefinitions, beanDefinitionToBeanMap, beans)}) {
