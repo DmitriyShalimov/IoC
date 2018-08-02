@@ -3,6 +3,7 @@ package ua.shalimov.ioc.context;
 import org.junit.Before;
 import org.junit.Test;
 import ua.shalimov.ioc.exception.BeanNotFoundException;
+import ua.shalimov.ioc.exception.NoUniqueBeanException;
 import ua.shalimov.ioc.testData.MailService;
 import ua.shalimov.ioc.testData.PaymentService;
 import ua.shalimov.ioc.testData.UserService;
@@ -42,13 +43,16 @@ public class ApplicationContextTest {
     public void getBeanForClassTest() {
         assertThat(applicationContext.getBean(MailService.class).getClass().getSimpleName(), is("MailService"));
         assertThat(applicationContext.getBean(UserService.class).getClass().getSimpleName(), is("UserService"));
+    }
+    @Test(expected = NoUniqueBeanException.class)
+    public void functionUnderTest() {
         assertThat(applicationContext.getBean(PaymentService.class).getClass().getSimpleName(), is("PaymentService"));
     }
 
     @Test
     public void getBeanNameTest() {
         List beanNames = applicationContext.getBeanName();
-        assertThat(beanNames.size(), is(4));
+        assertThat(beanNames.size(), is(5));
         assertThat(beanNames.contains("paymentService"), is(true));
         assertThat(beanNames.contains("paymentWithMaxService"), is(true));
         assertThat(beanNames.contains("userService"), is(true));

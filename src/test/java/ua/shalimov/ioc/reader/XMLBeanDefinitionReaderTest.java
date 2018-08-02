@@ -13,8 +13,10 @@ public class XMLBeanDefinitionReaderTest {
     @Test
     public void readBeanDefinitionsTest() {
         List<BeanDefinition> beanDefinitions;
-        BeanDefinitionReader beanDefinitionReader = new XMLBeanDefinitionReader();
-        beanDefinitions = beanDefinitionReader.readBeanDefinitions("context.xml");
+        String[]paths= new String[1];
+        paths[0]="context.xml";
+        BeanDefinitionReader beanDefinitionReader = new XMLBeanDefinitionReader(paths);
+        beanDefinitions = beanDefinitionReader.readBeanDefinitions();
         assertThat(beanDefinitions.size(), is(4));
         assertThat(beanDefinitions.get(0).getId(), is("mailService"));
         assertThat(beanDefinitions.get(0).getBeanClassName(), is("ua.shalimov.ioc.testData.MailService"));

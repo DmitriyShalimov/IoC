@@ -14,14 +14,27 @@ import javax.xml.parsers.SAXParser;
 
 public class XMLBeanDefinitionReader implements BeanDefinitionReader {
     private LinkedList<BeanDefinition> beanDefinitions = new LinkedList<>();
+    private final SAXParserFactory factory = SAXParserFactory.newInstance();
+    private String[] paths;
 
-    public List<BeanDefinition> readBeanDefinitions(String path) {
-        SAXParserFactory factory = SAXParserFactory.newInstance();
+    public XMLBeanDefinitionReader(String[] paths) {
+        this.paths = paths;
         factory.setValidating(true);
         factory.setNamespaceAware(false);
-        SAXParser parser;
+    }
+
+    @Override
+    public List<BeanDefinition> readBeanDefinitions() {
+        List<BeanDefinition> beanDefinitions = new ArrayList<>();
+        for (String path : paths) {
+            beanDefinitions.addAll(readBeanDefinitions(path));
+        }
+        return beanDefinitions;
+    }
+
+    public List<BeanDefinition> readBeanDefinitions(String path) {
         try {
-            parser = factory.newSAXParser();
+            SAXParser parser = factory.newSAXParser();
             parser.parse(getClass().getClassLoader().getResourceAsStream(path), new MyParser());
         } catch (ParserConfigurationException | IOException | SAXException e) {
             throw new BeanInstantiationException(e);
@@ -32,11 +45,11 @@ public class XMLBeanDefinitionReader implements BeanDefinitionReader {
     private class MyParser extends DefaultHandler {
         @Override
         public void startElement(String uri, String localName, String qName, Attributes attributes) throws SAXException {
-            if (qName.equals("import")) {
+            if ("import".equals(qName)) {
                 readBeanDefinitions(attributes.getValue("resource"));
             } else {
                 BeanDefinition beanDefinition = new BeanDefinition();
-                if (qName.equals("bean")) {
+                if ("bean".equals(qName)) {
                     String id = attributes.getValue("id");
                     checkRepeatableBeanId(id);
                     beanDefinition.setId(id);
@@ -45,13 +58,14 @@ public class XMLBeanDefinitionReader implements BeanDefinitionReader {
                     beanDefinition.setDependencies(new HashMap<>());
                     beanDefinition.setRefDependencies(new HashMap<>());
                     beanDefinitions.add(beanDefinition);
-                }
-                if (qName.equals("property")) {
+                } else if ("property".equals(qName)) {
                     String propertyName = attributes.getValue("name");
                     if (attributes.getValue("ref") != null) {
-                        beanDefinitions.getLast().getRefDependencies().put(propertyName, attributes.getValue("ref"));
+                        Map<String, String> refDependencies = beanDefinitions.getLast().getRefDependencies();
+                        refDependencies.put(propertyName, attributes.getValue("ref"));
                     } else {
-                        beanDefinitions.getLast().getDependencies().put(propertyName, attributes.getValue("value"));
+                        Map<String, String> dependencies = beanDefinitions.getLast().getDependencies();
+                        dependencies.put(propertyName, attributes.getValue("value"));
                     }
                 }
                 super.startElement(uri, localName, qName, attributes);

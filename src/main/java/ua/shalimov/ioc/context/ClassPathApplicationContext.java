@@ -1,7 +1,9 @@
 package ua.shalimov.ioc.context;
 
+import ua.shalimov.ioc.context.beanpostprocessor.BeanPostprocessorHandler;
 import ua.shalimov.ioc.exception.BeanInstantiationException;
 import ua.shalimov.ioc.exception.BeanNotFoundException;
+import ua.shalimov.ioc.exception.NoUniqueBeanException;
 import ua.shalimov.ioc.injector.Injector;
 import ua.shalimov.ioc.injector.ReferenceIngector;
 import ua.shalimov.ioc.injector.ValueInjector;
@@ -10,6 +12,7 @@ import ua.shalimov.ioc.model.BeanDefinition;
 import ua.shalimov.ioc.reader.BeanDefinitionReader;
 import ua.shalimov.ioc.reader.XMLBeanDefinitionReader;
 
+import javax.annotation.PostConstruct;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.*;
@@ -23,25 +26,56 @@ public class ClassPathApplicationContext implements ApplicationContext {
 
     public ClassPathApplicationContext(String... paths) {
         beans = new ArrayList<>();
-        setBeanDefinitionReader(new XMLBeanDefinitionReader());
-        for (String path : paths) {
-            beanDefinitions = reader.readBeanDefinitions(path);
-        }
+        setBeanDefinitionReader(new XMLBeanDefinitionReader(paths));
+        start();
+    }
+
+    public ClassPathApplicationContext(String path) {
+        this(new String[]{path});
+    }
+
+    public void start() {
+        beanDefinitions = reader.readBeanDefinitions();
         createBeansFromBeanDefinition();
         injectDependencies();
+        BeanPostprocessorHandler beanPostprocessorHendler = new BeanPostprocessorHandler(beans);
+        beanPostprocessorHendler.postProcessBeforeInitialization();
+        callInitMethod();
+        beanPostprocessorHendler.postProcessAfterInitialization();
     }
 
-    public ClassPathApplicationContext(String resourcesName) {
-        this(new String[]{resourcesName});
-    }
-
-    public <T> T getBean(Class<T> type) {
+    private void callInitMethod() {
         for (Bean bean : beans) {
-            if (type.isInstance(bean.getValue())) {
-                return type.cast(bean.getValue());
+            Class<?> beanClass = bean.getValue().getClass();
+            for (Method method : beanClass.getMethods()) {
+                if (method.isAnnotationPresent(PostConstruct.class)) {
+                    try {
+                        method.invoke(bean.getValue());
+                    } catch (IllegalAccessException | InvocationTargetException e) {
+                        throw new BeanInstantiationException(e);
+                    }
+                }
             }
         }
-        throw new BeanNotFoundException("No such bean was registered for class: " + type);
+    }
+
+    //getBean(UserDao.class) JdbsUserDao
+    public <T> T getBean(Class<T> type) {
+        T bean = null;
+        int count = 0;
+        for (Bean tempBean : beans) {
+            if (type.isAssignableFrom(tempBean.getValue().getClass())) {
+                bean = type.cast(tempBean.getValue());
+                count++;
+            }
+            if (count > 1) {
+                throw new NoUniqueBeanException("Multiple beans found for " + tempBean.getId());
+            }
+        }
+        if (bean == null) {
+            throw new BeanNotFoundException("No such bean was registered for class: " + type);
+        }
+        return bean;
     }
 
     public <T> T getBean(String id, Class<T> type) {

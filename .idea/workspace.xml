@@ -2,12 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7df4b849-bfc4-4710-b657-042fe9ac76e0" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/ua/shalimov/ioc/injector/Injector.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ua/shalimov/ioc/injector/ReferenceIngector.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ua/shalimov/ioc/injector/ValueInjector.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ua/shalimov/ioc/context/beanpostprocessor/BeanFactoryPostProcess.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ua/shalimov/ioc/context/beanpostprocessor/BeanPostProcessor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ua/shalimov/ioc/context/beanpostprocessor/BeanPostprocessorHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ua/shalimov/ioc/exception/NoUniqueBeanException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/ua/shalimov/ioc/testData/ConsoleLogBeanPostProcessor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ua/shalimov/ioc/context/ApplicationContext.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ua/shalimov/ioc/context/ApplicationContext.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ua/shalimov/ioc/context/ClassPathApplicationContext.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ua/shalimov/ioc/context/ClassPathApplicationContext.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ua/shalimov/ioc/reader/BeanDefinitionReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ua/shalimov/ioc/reader/BeanDefinitionReader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ua/shalimov/ioc/reader/XMLBeanDefinitionReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ua/shalimov/ioc/reader/XMLBeanDefinitionReader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/ua/shalimov/ioc/context/ApplicationContextTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ua/shalimov/ioc/context/ApplicationContextTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/ua/shalimov/ioc/reader/XMLBeanDefinitionReaderTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ua/shalimov/ioc/reader/XMLBeanDefinitionReaderTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/ua/shalimov/ioc/testData/MailService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ua/shalimov/ioc/testData/MailService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/context.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/context.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -25,61 +32,83 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="ClassPathApplicationContext.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ClassPathApplicationContext.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/ua/shalimov/ioc/context/ClassPathApplicationContext.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="427">
-              <caret line="94" column="9" selection-start-line="94" selection-start-column="9" selection-end-line="94" selection-end-column="9" />
+            <state relative-caret-position="141">
+              <caret line="67" column="45" selection-start-line="67" selection-start-column="45" selection-end-line="67" selection-end-column="45" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#3628#3629#0" expanded="true" />
+                <element signature="e#3711#3712#0" expanded="true" />
+                <element signature="e#3783#3784#0" expanded="true" />
+                <element signature="e#3819#3820#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Injector.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/ua/shalimov/ioc/injector/Injector.java">
+      <file leaf-file-name="NoUniqueBeanException.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/ua/shalimov/ioc/exception/NoUniqueBeanException.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="673">
-              <caret line="45" column="42" selection-start-line="45" selection-start-column="42" selection-end-line="45" selection-end-column="42" />
+            <state relative-caret-position="85">
+              <caret line="5" column="5" selection-start-line="5" selection-start-column="5" selection-end-line="5" selection-end-column="5" />
               <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#734#735#0" expanded="true" />
-                <element signature="e#762#763#0" expanded="true" />
+                <element signature="e#147#148#0" expanded="true" />
+                <element signature="e#177#178#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ValueInjector.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/ua/shalimov/ioc/injector/ValueInjector.java">
+      <file leaf-file-name="BeanNotFoundException.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/ua/shalimov/ioc/exception/BeanNotFoundException.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="99">
-              <caret line="12" selection-start-line="12" selection-end-line="12" />
+            <state relative-caret-position="51">
+              <caret line="4" column="23" lean-forward="true" selection-start-line="3" selection-start-column="3" selection-end-line="4" selection-end-column="23" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="BeanFactoryPostProcess.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/ua/shalimov/ioc/context/beanpostprocessor/BeanFactoryPostProcess.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="34">
+              <caret line="2" column="39" selection-start-line="2" selection-start-column="39" selection-end-line="2" selection-end-column="39" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="BeanPostprocessorHandler.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/ua/shalimov/ioc/context/beanpostprocessor/BeanPostprocessorHandler.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="133">
+              <caret line="10" column="29" selection-start-line="10" selection-start-column="29" selection-end-line="10" selection-end-column="29" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#219#220#0" expanded="true" />
+                <element signature="e#253#254#0" expanded="true" />
+                <element signature="e#491#492#0" expanded="true" />
+                <element signature="e#532#533#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ReferenceIngector.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/ua/shalimov/ioc/injector/ReferenceIngector.java">
+      <file leaf-file-name="BeanPostProcessor.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/ua/shalimov/ioc/context/beanpostprocessor/BeanPostProcessor.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="284">
-              <caret line="24" column="39" lean-forward="true" selection-start-line="24" selection-start-column="39" selection-end-line="24" selection-end-column="39" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="34">
+              <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="XMLBeanDefinitionReaderTest.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/ua/shalimov/ioc/reader/XMLBeanDefinitionReaderTest.java">
+      <file leaf-file-name="ApplicationContext.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/ua/shalimov/ioc/context/ApplicationContext.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="16" column="68" selection-start-line="16" selection-start-column="68" selection-end-line="16" selection-end-column="68" />
+            <state relative-caret-position="119">
+              <caret line="7" column="42" selection-start-line="7" selection-start-column="42" selection-end-line="7" selection-end-column="42" />
             </state>
           </provider>
         </entry>
@@ -87,8 +116,26 @@
       <file leaf-file-name="ApplicationContextTest.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/ua/shalimov/ioc/context/ApplicationContextTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="595">
-              <caret line="48" column="16" selection-start-line="48" selection-start-column="16" selection-end-line="48" selection-end-column="16" />
+            <state relative-caret-position="263">
+              <caret line="47" selection-start-line="47" selection-end-line="48" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/pom.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="34">
+              <caret line="18" column="21" selection-start-line="18" selection-start-column="21" selection-end-line="18" selection-end-column="21" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="context.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/resources/context.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="255">
+              <caret line="15" column="11" lean-forward="true" selection-start-line="15" selection-start-column="11" selection-end-line="15" selection-end-column="11" />
             </state>
           </provider>
         </entry>
@@ -98,8 +145,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
         <option value="JUnit4 Test Class" />
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -116,15 +163,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/ioccontainer/XMLBeanReader.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ioccontainer/BeanReader.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ioccontainer/ApplicationContext.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ua.shalimov.ioc/service/UserService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ioccontainer/BeanDefinitionReader.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ioccontainer/Bean.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ioccontainer/MyParser.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ioccontainer/BeanDefinition.java" />
-        <option value="$PROJECT_DIR$/src/main/java/UserService.java" />
         <option value="$PROJECT_DIR$/src/main/java/Starter.java" />
         <option value="$PROJECT_DIR$/src/main/java/PaymentService.java" />
         <option value="$PROJECT_DIR$/src/main/java/ioccontainer/DeanInstantiationExeption.java" />
@@ -155,18 +193,27 @@
         <option value="$PROJECT_DIR$/src/main/java/ua/shalimov/ioc/testdata/UserService.java" />
         <option value="$PROJECT_DIR$/src/test/java/ua/shalimov/ioc/testData/UserService.java" />
         <option value="$PROJECT_DIR$/src/test/java/ua/shalimov/ioc/testData/PaymentService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ua/shalimov/ioc/reader/BeanDefinitionReader.java" />
-        <option value="$PROJECT_DIR$/src/test/java/ua/shalimov/ioc/context/ApplicationContextTest.java" />
-        <option value="$PROJECT_DIR$/src/test/java/ua/shalimov/ioc/reader/XMLBeanDefinitionReaderTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/ua/shalimov/ioc/model/Bean.java" />
         <option value="$PROJECT_DIR$/src/main/resources/context.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/ua/shalimov/ioc/reader/XMLBeanDefinitionReader.java" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/src/main/java/ua/shalimov/ioc/context/ApplicationContext.java" />
         <option value="$PROJECT_DIR$/src/main/java/ua/shalimov/ioc/injector/ValueInjector.java" />
         <option value="$PROJECT_DIR$/src/main/java/ua/shalimov/ioc/injector/ReferenceIngector.java" />
         <option value="$PROJECT_DIR$/src/main/java/ua/shalimov/ioc/injector/Injector.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ua/shalimov/ioc/reader/BeanDefinitionReader.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ua/shalimov/ioc/reader/XMLBeanDefinitionReader.java" />
+        <option value="$PROJECT_DIR$/src/test/java/ua/shalimov/ioc/reader/XMLBeanDefinitionReaderTest.java" />
+        <option value="$PROJECT_DIR$/src/test/java/ua/shalimov/ioc/testData/MailService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ua/shalimov/ioc/context/BeanPostProcessor.java" />
+        <option value="$PROJECT_DIR$/src/test/resources/context.xml" />
+        <option value="$PROJECT_DIR$/src/test/java/ua/shalimov/ioc/testData/ConsoleLogBeanPostProcessor.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ua/shalimov/ioc/context/BeanPostprocessorHendler.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ua/shalimov/ioc/context/BeanPostprocessorHandler.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ua/shalimov/ioc/context/beanpostprocessor/BeanPostprocessorHandler.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ua/shalimov/ioc/context/beanpostprocessor/BeanFactoryPostProcess.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ua/shalimov/ioc/exception/NoUniqueBeanException.java" />
         <option value="$PROJECT_DIR$/src/main/java/ua/shalimov/ioc/context/ClassPathApplicationContext.java" />
+        <option value="$PROJECT_DIR$/src/test/java/ua/shalimov/ioc/context/ApplicationContextTest.java" />
       </list>
     </option>
   </component>
@@ -195,9 +242,9 @@
   <component name="NodePackageJsonFileManager">
     <packageJsonPaths />
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="-12" />
+    <option name="y" value="-18" />
     <option name="width" value="1616" />
     <option name="height" value="916" />
   </component>
@@ -207,8 +254,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -250,6 +295,25 @@
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="ioc" type="462c0819:PsiDirectoryNode" />
               <item name="context" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ioc" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ioc" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="ioc" type="462c0819:PsiDirectoryNode" />
+              <item name="context" type="462c0819:PsiDirectoryNode" />
+              <item name="beanpostprocessor" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ioc" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ioc" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="ioc" type="462c0819:PsiDirectoryNode" />
+              <item name="exception" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="ioc" type="b2602c69:ProjectViewProjectNode" />
@@ -338,6 +402,8 @@
         </subPane>
       </pane>
       <pane id="PackagesPane" />
+      <pane id="Scope" />
+      <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -390,20 +456,9 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.XMLBeanDefinitionReaderTest">
+  <component name="RunManager" selected="JUnit.ApplicationContextTest">
     <configuration default="true" type="Applet" factoryName="Applet">
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-    </configuration>
-    <configuration name="Starter" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ua.shalimov.ioc.Starter" />
-      <module name="ioc" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="ua.shalimov.ioc.testData.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
@@ -412,7 +467,7 @@
       <module name="ioc" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="ua.shalimov.ioc.context.*" />
+          <option name="PATTERN" value="ua.shalimov.ioc.context.beanpostprocessor.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -431,11 +486,34 @@
       </option>
       <patterns />
     </configuration>
-    <configuration name="ApplicationContextTest.getBeanForNameAndClassTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ApplicationContextTest.getBeanForClassTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ioc" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="ua.shalimov.ioc.context.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="ua.shalimov.ioc.context" />
+      <option name="MAIN_CLASS_NAME" value="ua.shalimov.ioc.context.ApplicationContextTest" />
+      <option name="METHOD_NAME" value="getBeanForClassTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <patterns />
+    </configuration>
+    <configuration name="ApplicationContextTest.getBeanForNameAndClassTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ioc" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ua.shalimov.ioc.context.beanpostprocessor.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -458,7 +536,7 @@
       <module name="ioc" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="ua.shalimov.ioc.context.*" />
+          <option name="PATTERN" value="ua.shalimov.ioc.context.beanpostprocessor.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -596,19 +674,19 @@
       <method />
     </configuration>
     <list>
-      <item itemvalue="Application.Starter" />
       <item itemvalue="JUnit.XMLBeanDefinitionReaderTest" />
       <item itemvalue="JUnit.ApplicationContextTest" />
       <item itemvalue="JUnit.ApplicationContextTest.getBeanForNameTest" />
       <item itemvalue="JUnit.ApplicationContextTest.getBeanForNameAndClassTest" />
+      <item itemvalue="JUnit.ApplicationContextTest.getBeanForClassTest" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.XMLBeanDefinitionReaderTest" />
         <item itemvalue="JUnit.ApplicationContextTest" />
-        <item itemvalue="JUnit.ApplicationContextTest.getBeanForNameAndClassTest" />
+        <item itemvalue="JUnit.ApplicationContextTest.getBeanForClassTest" />
+        <item itemvalue="JUnit.XMLBeanDefinitionReaderTest" />
         <item itemvalue="JUnit.ApplicationContextTest.getBeanForNameTest" />
-        <item itemvalue="Application.Starter" />
+        <item itemvalue="JUnit.ApplicationContextTest.getBeanForNameAndClassTest" />
       </list>
     </recent_temporary>
   </component>
@@ -626,82 +704,84 @@
       <workItem from="1532689746605" duration="52000" />
       <workItem from="1532690490559" duration="6083000" />
       <workItem from="1532699926439" duration="29000" />
-      <workItem from="1532706264911" duration="7601000" />
+      <workItem from="1532706264911" duration="8209000" />
+      <workItem from="1532963604335" duration="5599000" />
+      <workItem from="1533194428728" duration="10786000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="ApplicationContextTest - 2018.07.27 at 19h 04m 43s.xml">
+    <history-entry file="ApplicationContextTest - 2018.08.02 at 12h 32m 39s.xml">
       <configuration name="ApplicationContextTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="ApplicationContextTest - 2018.07.27 at 19h 07m 23s.xml">
+    <history-entry file="ApplicationContextTest - 2018.08.02 at 12h 32m 44s.xml">
       <configuration name="ApplicationContextTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="ApplicationContextTest - 2018.07.27 at 19h 08m 32s.xml">
+    <history-entry file="ApplicationContextTest - 2018.08.02 at 12h 34m 31s.xml">
       <configuration name="ApplicationContextTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="ApplicationContextTest - 2018.07.27 at 19h 09m 37s.xml">
+    <history-entry file="ApplicationContextTest - 2018.08.02 at 12h 34m 35s.xml">
       <configuration name="ApplicationContextTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="ApplicationContextTest - 2018.07.27 at 19h 09m 43s.xml">
+    <history-entry file="ApplicationContextTest - 2018.08.02 at 12h 38m 40s.xml">
       <configuration name="ApplicationContextTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="ApplicationContextTest - 2018.07.27 at 19h 10m 45s.xml">
+    <history-entry file="ApplicationContextTest - 2018.08.02 at 12h 38m 52s.xml">
       <configuration name="ApplicationContextTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="ApplicationContextTest - 2018.07.27 at 19h 15m 31s.xml">
+    <history-entry file="ApplicationContextTest - 2018.08.02 at 12h 43m 25s.xml">
       <configuration name="ApplicationContextTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="ApplicationContextTest - 2018.07.27 at 19h 26m 13s.xml">
+    <history-entry file="ApplicationContextTest - 2018.08.02 at 13h 09m 46s.xml">
       <configuration name="ApplicationContextTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="ApplicationContextTest - 2018.07.27 at 19h 31m 11s.xml">
-      <configuration name="ApplicationContextTest" configurationId="JUnit" />
+    <history-entry file="ApplicationContextTest_getBeanForClassTest - 2018.08.02 at 13h 28m 04s.xml">
+      <configuration name="ApplicationContextTest.getBeanForClassTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="ApplicationContextTest - 2018.07.27 at 20h 46m 53s.xml">
+    <history-entry file="ApplicationContextTest - 2018.08.02 at 13h 51m 07s.xml">
       <configuration name="ApplicationContextTest" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="28961000" />
+    <option name="totallyTimeSpent" value="45954000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1616" height="916" extended-state="0" />
+    <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="5" />
       <window_info anchor="bottom" id="TODO" order="13" />
-      <window_info anchor="bottom" id="Messages" order="1" weight="0.32390746" />
+      <window_info anchor="bottom" id="Messages" order="1" weight="0.32384825" />
       <window_info anchor="right" id="Palette&#9;" order="1" />
       <window_info id="Image Layers" order="3" />
       <window_info anchor="right" id="Capture Analysis" order="3" />
       <window_info anchor="bottom" id="Event Log" order="0" side_tool="true" />
-      <window_info anchor="right" id="Maven Projects" order="0" weight="0.1474359" />
+      <window_info anchor="right" id="Maven Projects" order="0" weight="0.14717224" />
       <window_info anchor="bottom" id="Database Changes" order="14" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="2" />
-      <window_info active="true" anchor="bottom" id="Run" order="6" visible="true" weight="0.20822622" />
+      <window_info anchor="bottom" id="Run" order="6" visible="true" weight="0.46341464" />
       <window_info anchor="bottom" id="Terminal" order="3" />
       <window_info id="Capture Tool" order="0" />
       <window_info id="Designer" order="1" />
-      <window_info content_ui="combo" id="Project" order="9" visible="true" weight="0.16645244" />
+      <window_info active="true" content_ui="combo" id="Project" order="9" visible="true" weight="0.17030849" />
       <window_info anchor="right" id="Database" order="6" />
-      <window_info anchor="bottom" id="Find" order="5" weight="0.33161953" />
       <window_info id="Structure" order="10" side_tool="true" weight="0.25" />
-      <window_info anchor="right" id="Ant Build" order="10" weight="0.25" />
+      <window_info anchor="right" id="Ant Build" order="10" visible="true" weight="0.25" />
       <window_info id="UI Designer" order="2" />
       <window_info anchor="right" id="Theme Preview" order="4" />
       <window_info id="Favorites" order="4" side_tool="true" />
-      <window_info anchor="bottom" id="Debug" order="8" weight="0.38174808" />
+      <window_info anchor="bottom" id="Debug" order="8" weight="0.38075882" />
       <window_info anchor="bottom" id="DB Execution Console" order="7" />
       <window_info anchor="right" id="Coverage" order="7" side_tool="true" />
       <window_info anchor="bottom" id="MaxCompute Job" order="10" />
       <window_info anchor="bottom" id="Cvs" order="11" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="12" weight="0.4" />
-      <window_info id="MaxCompute Project Explorer" order="7" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="9" weight="0.25" />
       <window_info id="DB Browser" order="8" />
       <window_info id="Nl-Palette" order="5" />
+      <window_info id="MaxCompute Project Explorer" order="7" />
       <window_info anchor="right" id="Properties" order="2" />
+      <window_info anchor="bottom" id="Find" order="5" weight="0.33161953" />
       <window_info anchor="right" id="Commander" order="8" weight="0.4" />
       <window_info anchor="bottom" id="MaxCompute Console" order="9" />
       <window_info anchor="bottom" id="Message" order="4" />
@@ -711,40 +791,40 @@
       <window_info anchor="bottom" id="DB Execution Console" order="7" />
       <window_info id="Designer" order="1" />
       <window_info anchor="right" id="Palette" order="5" />
-      <window_info id="Image Layers" order="3" />
-      <window_info anchor="bottom" id="Run" order="6" weight="0.42455244" />
+      <window_info anchor="bottom" id="Inspection" order="12" weight="0.4" />
+      <window_info anchor="bottom" id="Run" order="6" visible="true" weight="0.20822622" />
       <window_info anchor="bottom" id="Cvs" order="11" weight="0.25" />
-      <window_info anchor="right" id="Ant Build" order="9" weight="0.25" />
+      <window_info anchor="right" id="Ant Build" order="10" weight="0.25" />
       <window_info id="DB Browser" order="8" />
       <window_info id="UI Designer" order="2" />
       <window_info anchor="right" id="Properties" order="2" />
       <window_info anchor="bottom" id="Terminal" order="3" />
       <window_info id="Capture Tool" order="0" />
       <window_info anchor="right" id="Capture Analysis" order="3" />
-      <window_info anchor="right" id="Commander" order="7" weight="0.4" />
+      <window_info anchor="right" id="Commander" order="8" weight="0.4" />
       <window_info anchor="bottom" id="Event Log" order="0" side_tool="true" />
-      <window_info anchor="bottom" id="Messages" order="1" weight="0.32480818" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="10" weight="0.25" />
-      <window_info id="Favorites" order="4" side_tool="true" />
-      <window_info id="MaxCompute Job Explorer" order="6" />
+      <window_info anchor="bottom" id="Messages" order="1" weight="0.32390746" />
+      <window_info anchor="bottom" id="TODO" order="13" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="9" weight="0.25" />
+      <window_info anchor="right" id="Theme Preview" order="4" />
       <window_info anchor="bottom" id="Database Changes" order="14" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="2" />
       <window_info anchor="bottom" id="MaxCompute Job" order="10" />
       <window_info id="Nl-Palette" order="5" />
-      <window_info anchor="right" id="Maven Projects" order="0" visible="true" weight="0.1474359" />
+      <window_info anchor="right" id="Maven Projects" order="0" visible="true" weight="0.14717224" />
       <window_info id="MaxCompute Project Explorer" order="7" />
-      <window_info active="true" content_ui="combo" id="Project" order="9" visible="true" weight="0.16025642" />
-      <window_info anchor="right" id="Database" order="8" />
+      <window_info active="true" content_ui="combo" id="Project" order="9" visible="true" weight="0.16838047" />
+      <window_info anchor="right" id="Database" order="6" />
       <window_info anchor="bottom" id="Message" order="4" />
-      <window_info anchor="bottom" id="TODO" order="13" />
+      <window_info id="Image Layers" order="3" />
       <window_info anchor="right" id="Palette&#9;" order="1" />
-      <window_info anchor="right" id="Theme Preview" order="4" />
+      <window_info id="Favorites" order="4" side_tool="true" />
       <window_info id="Structure" order="10" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="12" weight="0.4" />
-      <window_info anchor="right" id="Coverage" order="6" side_tool="true" />
-      <window_info anchor="bottom" id="Find" order="5" weight="0.2672634" />
+      <window_info id="MaxCompute Job Explorer" order="6" />
+      <window_info anchor="right" id="Coverage" order="7" side_tool="true" />
+      <window_info anchor="bottom" id="Find" order="5" weight="0.33161953" />
       <window_info anchor="bottom" id="MaxCompute Console" order="9" />
-      <window_info anchor="bottom" id="Debug" order="8" weight="0.38235295" />
+      <window_info anchor="bottom" id="Debug" order="8" weight="0.38174808" />
     </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -755,7 +835,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="113" />
+      <option name="time" value="121" />
     </breakpoint-manager>
   </component>
   <component name="antWorkspaceConfiguration">
@@ -765,71 +845,53 @@
   <component name="debuggerHistoryManager">
     <expressions id="evaluateExpression">
       <expression>
-        <expression-string>getClass().getClassLoader().getResourceAsStream(&quot;context.xml&quot;)</expression-string>
+        <expression-string>bean.getId()</expression-string>
         <language-id>JAVA</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>getClass().getClassLoader().getResourceAsStream(&quot;/context.xml&quot;)</expression-string>
+        <expression-string>bean.getValue()</expression-string>
         <language-id>JAVA</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>getClass().getClassLoader().getResourceAsStream(&quot;classes/context.xml&quot;)</expression-string>
+        <expression-string>BeanPostProcessor.class.isAssignableFrom(object.getClass())</expression-string>
         <language-id>JAVA</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>getClass().getClassLoader().getResourceAsStream(&quot;/classes/context.xml&quot;)</expression-string>
+        <expression-string>object.getClass().isInstance(BeanPostProcessor.class)</expression-string>
         <language-id>JAVA</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>getClass().getClassLoader().getResourceAsStream(&quot;target/classes/context.xml&quot;)</expression-string>
+        <expression-string>object.getClass().isInstance(BeanPostProcessor)</expression-string>
         <language-id>JAVA</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>getClass().getClassLoader().getResourceAsStream(&quot;/target/classes/context.xml&quot;)</expression-string>
+        <expression-string>object.getClass()instanceof Object</expression-string>
         <language-id>JAVA</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>getClass().getClassLoader().getResourceAsStream(&quot;ioc/target/classes/context.xml&quot;)</expression-string>
+        <expression-string>object.getClass()</expression-string>
         <language-id>JAVA</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>getClass().getClassLoader().getResourceAsStream(&quot;/ioc/target/classes/context.xml&quot;)</expression-string>
+        <expression-string>object.getClass() instanceof  BeanPostProcessor</expression-string>
         <language-id>JAVA</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>getClass().getClassLoader().getResourceAsStream(&quot;:/ioc/target/classes/context.xml&quot;)</expression-string>
+        <expression-string>object.getClass() instanceof BeanPostProcessor</expression-string>
         <language-id>JAVA</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/ua/shalimov/ioc/model/Bean.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="27" selection-start-line="6" selection-start-column="27" selection-end-line="6" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ua/shalimov/ioc/context/ApplicationContext.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="5" column="17" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://C:/my_application/pom.xml" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/ioccontainer/MyParser.java" />
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_131/src.zip!/java/lang/Class.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/UserService.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/PaymentService.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/MailService.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/Starter.java" />
@@ -853,13 +915,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ua/shalimov/ioc/exception/BeanNotFoundException.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ua/shalimov/ioc/exception/BeanInstantiationException.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
@@ -867,20 +922,6 @@
           <folding>
             <element signature="e#187#188#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ua/shalimov/ioc/reader/BeanDefinitionReader.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="7" column="25" selection-start-line="7" selection-start-column="25" selection-end-line="7" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/ua/shalimov/ioc/testData/MailService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="13" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
         </state>
       </provider>
     </entry>
@@ -928,73 +969,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/target/classes/context.xml" />
     <entry file="file://$PROJECT_DIR$/src/main/resources/email-context.xml" />
-    <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.11/junit-4.11.jar!/org/junit/internal/runners/model/ReflectiveCallable.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="16" selection-start-line="16" selection-end-line="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ua/shalimov/ioc/model/Bean.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="23" column="18" selection-start-line="23" selection-start-column="18" selection-end-line="23" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="18" column="21" selection-start-line="18" selection-start-column="21" selection-end-line="18" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/context.xml" />
     <entry file="file://$PROJECT_DIR$/src/test/resources/email-context.xml">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ua/shalimov/ioc/reader/XMLBeanDefinitionReader.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="25" selection-start-line="24" selection-end-line="25" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/resources/context.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="22" selection-start-line="2" selection-start-column="22" selection-end-line="2" selection-end-column="22" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
           <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ua/shalimov/ioc/context/ApplicationContext.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="42" selection-start-line="7" selection-start-column="42" selection-end-line="7" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/ua/shalimov/ioc/reader/XMLBeanDefinitionReaderTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="16" column="68" selection-start-line="16" selection-start-column="68" selection-end-line="16" selection-end-column="68" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/ua/shalimov/ioc/context/ApplicationContextTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="595">
-          <caret line="48" column="16" selection-start-line="48" selection-start-column="16" selection-end-line="48" selection-end-column="16" />
         </state>
       </provider>
     </entry>
@@ -1005,10 +987,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ua/shalimov/ioc/injector/ReferenceIngector.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/ua/shalimov/ioc/injector/Injector.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="284">
-          <caret line="24" column="39" lean-forward="true" selection-start-line="24" selection-start-column="39" selection-end-line="24" selection-end-column="39" />
+        <state relative-caret-position="534">
+          <caret line="45" column="42" selection-start-line="45" selection-start-column="42" selection-end-line="45" selection-end-column="42" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1025,25 +1007,167 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ua/shalimov/ioc/injector/Injector.java">
+    <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.11/junit-4.11.jar!/org/junit/runners/ParentRunner.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="673">
-          <caret line="45" column="42" selection-start-line="45" selection-start-column="42" selection-end-line="45" selection-end-column="42" />
+        <state relative-caret-position="135">
+          <caret line="161" selection-start-line="161" selection-end-line="161" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/ua/shalimov/ioc/testData/MailService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" column="19" selection-start-line="13" selection-start-column="19" selection-end-line="13" selection-end-column="19" />
+          <folding>
+            <element signature="e#238#239#0" expanded="true" />
+            <element signature="e#274#275#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ua/shalimov/ioc/reader/BeanDefinitionReader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="7" column="45" selection-start-line="7" selection-start-column="45" selection-end-line="7" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/ua/shalimov/ioc/reader/XMLBeanDefinitionReaderTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" selection-start-line="10" selection-end-line="10" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#734#735#0" expanded="true" />
-            <element signature="e#762#763#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ua/shalimov/ioc/reader/XMLBeanDefinitionReader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="50" selection-start-line="15" selection-start-column="50" selection-end-line="15" selection-end-column="50" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ua/shalimov/ioc/model/Bean.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="23" column="18" selection-start-line="23" selection-start-column="18" selection-end-line="23" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ua/shalimov/ioc/injector/ReferenceIngector.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="211">
+          <caret line="20" selection-start-line="20" selection-end-line="20" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.11/junit-4.11.jar!/org/junit/internal/runners/model/ReflectiveCallable.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="17" selection-start-line="17" selection-end-line="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/ua/shalimov/ioc/testData/ConsoleLogBeanPostProcessor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="110">
+          <caret line="7" column="58" selection-start-line="7" selection-start-column="58" selection-end-line="7" selection-end-column="58" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ua/shalimov/ioc/context/beanpostprocessor/BeanPostProcessor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ua/shalimov/ioc/context/beanpostprocessor/BeanPostprocessorHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="10" column="29" selection-start-line="10" selection-start-column="29" selection-end-line="10" selection-end-column="29" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#219#220#0" expanded="true" />
+            <element signature="e#253#254#0" expanded="true" />
+            <element signature="e#491#492#0" expanded="true" />
+            <element signature="e#532#533#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ua/shalimov/ioc/context/ApplicationContext.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="42" selection-start-line="7" selection-start-column="42" selection-end-line="7" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ua/shalimov/ioc/context/beanpostprocessor/BeanFactoryPostProcess.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="39" selection-start-line="2" selection-start-column="39" selection-end-line="2" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ua/shalimov/ioc/exception/BeanNotFoundException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="4" column="23" lean-forward="true" selection-start-line="3" selection-start-column="3" selection-end-line="4" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ua/shalimov/ioc/exception/NoUniqueBeanException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="5" selection-start-line="5" selection-start-column="5" selection-end-line="5" selection-end-column="5" />
+          <folding>
+            <element signature="e#147#148#0" expanded="true" />
+            <element signature="e#177#178#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ua/shalimov/ioc/context/ClassPathApplicationContext.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="427">
-          <caret line="94" column="9" selection-start-line="94" selection-start-column="9" selection-end-line="94" selection-end-column="9" />
+        <state relative-caret-position="141">
+          <caret line="67" column="45" selection-start-line="67" selection-start-column="45" selection-end-line="67" selection-end-column="45" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#3628#3629#0" expanded="true" />
+            <element signature="e#3711#3712#0" expanded="true" />
+            <element signature="e#3783#3784#0" expanded="true" />
+            <element signature="e#3819#3820#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/resources/context.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="11" lean-forward="true" selection-start-line="15" selection-start-column="11" selection-end-line="15" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/ua/shalimov/ioc/context/ApplicationContextTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="263">
+          <caret line="47" selection-start-line="47" selection-end-line="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="18" column="21" selection-start-line="18" selection-start-column="21" selection-end-line="18" selection-end-column="21" />
         </state>
       </provider>
     </entry>

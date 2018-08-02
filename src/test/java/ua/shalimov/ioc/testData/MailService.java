@@ -1,11 +1,18 @@
 package ua.shalimov.ioc.testData;
 
 
+import javax.annotation.PostConstruct;
+
 public class MailService {
     private String protocol;
     private int port;
 
     public MailService() {
+    }
+
+    @PostConstruct
+    public void customMethod(){
+        System.out.println("Init method");
     }
 
     public String getProtocol() {
