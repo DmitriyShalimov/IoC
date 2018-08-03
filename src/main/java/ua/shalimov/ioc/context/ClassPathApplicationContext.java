@@ -1,12 +1,12 @@
 package ua.shalimov.ioc.context;
 
 import ua.shalimov.ioc.context.beanpostprocessor.BeanFactoryPostProcessor;
-import ua.shalimov.ioc.context.beanpostprocessor.BeanPostprocessorHandler;
+import ua.shalimov.ioc.context.beanpostprocessor.BeanPostProcessorHandler;
 import ua.shalimov.ioc.exception.BeanInstantiationException;
 import ua.shalimov.ioc.exception.BeanNotFoundException;
 import ua.shalimov.ioc.exception.NoUniqueBeanException;
 import ua.shalimov.ioc.injector.Injector;
-import ua.shalimov.ioc.injector.ReferenceIngector;
+import ua.shalimov.ioc.injector.ReferenceInjector;
 import ua.shalimov.ioc.injector.ValueInjector;
 import ua.shalimov.ioc.model.Bean;
 import ua.shalimov.ioc.model.BeanDefinition;
@@ -40,10 +40,10 @@ public class ClassPathApplicationContext implements ApplicationContext {
         callBeanFactoryPostProcess(beanDefinitions);
         createBeansFromBeanDefinition();
         injectDependencies();
-        BeanPostprocessorHandler beanPostprocessorHendler = new BeanPostprocessorHandler(beans);
-        beanPostprocessorHendler.postProcessBeforeInitialization();
+        BeanPostProcessorHandler beanPostProcessorHandler = new BeanPostProcessorHandler(beans);
+        beanPostProcessorHandler.postProcessBeforeInitialization();
         callInitMethod();
-        beanPostprocessorHendler.postProcessAfterInitialization();
+        beanPostProcessorHandler.postProcessAfterInitialization();
     }
 
     private void callBeanFactoryPostProcess(List<BeanDefinition> beanDefinitions) {
@@ -54,9 +54,9 @@ public class ClassPathApplicationContext implements ApplicationContext {
                 String className = beanDefinition.getBeanClassName();
                 Class<?> beanClass = Class.forName(className);
                 if (BeanFactoryPostProcessor.class.isAssignableFrom(beanClass)) {
-                    Bean bean=createBeanFromBeanDefinition(beanDefinition);
-                    Method postProcessBeanFactory = beanClass.getMethod("postProcessBeanFactory", List.class);
-                    postProcessBeanFactory.invoke(bean.getValue(), beanDefinitions);
+                    Bean bean = createBeanFromBeanDefinition(beanDefinition);
+                    BeanFactoryPostProcessor beanFactoryPostProcessor = (BeanFactoryPostProcessor) bean.getValue();
+                    beanFactoryPostProcessor.postProcessBeanFactory(beanDefinitions);
                     iterator.remove();
                 }
             } catch (Exception e) {
@@ -64,6 +64,7 @@ public class ClassPathApplicationContext implements ApplicationContext {
             }
         }
     }
+
     private Bean createBeanFromBeanDefinition(BeanDefinition beanDefinition) {
         try {
             String className = beanDefinition.getBeanClassName();
@@ -81,7 +82,7 @@ public class ClassPathApplicationContext implements ApplicationContext {
     private void callInitMethod() {
         for (Bean bean : beans) {
             Class<?> beanClass = bean.getValue().getClass();
-            for (Method method : beanClass.getMethods()) {
+            for (Method method : beanClass.getDeclaredMethods()) {
                 if (method.isAnnotationPresent(PostConstruct.class)) {
                     try {
                         method.invoke(bean.getValue());
@@ -145,10 +146,8 @@ public class ClassPathApplicationContext implements ApplicationContext {
         }
     }
 
-
-
     private void injectDependencies() {
-        for (Injector injector : new Injector[]{new ValueInjector(beanDefinitions, beanDefinitionToBeanMap, beans), new ReferenceIngector(beanDefinitions, beanDefinitionToBeanMap, beans)}) {
+        for (Injector injector : new Injector[]{new ValueInjector(beanDefinitions, beanDefinitionToBeanMap, beans), new ReferenceInjector(beanDefinitions, beanDefinitionToBeanMap, beans)}) {
             injector.injectDependencies();
         }
     }

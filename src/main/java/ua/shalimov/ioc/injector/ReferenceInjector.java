@@ -9,9 +9,9 @@ import java.lang.reflect.Method;
 import java.util.List;
 import java.util.Map;
 
-public class ReferenceIngector extends Injector {
+public class ReferenceInjector extends Injector {
 
-    public ReferenceIngector(List<BeanDefinition> beanDefinitions, Map<BeanDefinition, Bean> beanDefinitionToBeanMap, List<Bean> beans) {
+    public ReferenceInjector(List<BeanDefinition> beanDefinitions, Map<BeanDefinition, Bean> beanDefinitionToBeanMap, List<Bean> beans) {
         super(beanDefinitions, beanDefinitionToBeanMap, beans);
     }
 

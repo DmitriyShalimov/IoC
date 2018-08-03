@@ -16,5 +16,5 @@
     </bean>
 
     <bean id="consoleLogBeanPostProcessor" class="ua.shalimov.ioc.testData.ConsoleLogBeanPostProcessor"></bean>
-    
+
 </beans>
